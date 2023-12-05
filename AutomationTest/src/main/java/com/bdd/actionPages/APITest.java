@@ -2,22 +2,33 @@ package com.bdd.actionPages;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
-public class APITest extends BaseClass {
-    public static WebDriver driver;
+public class APITest {
 
     @Test
-    public  void Test_API(){
-
-
+    public  void Test_API() {
+        Response response= given()
+                .when()
+                .get("https://api.citybik.es/v2/networks")
+                .then()
+                .contentType(ContentType.JSON)
+                .extract()
+                .response();
+        String responseBody= response.getBody().asPrettyString();
+        System.out.println(responseBody);
+        JsonPath jsonPath= new JsonPath(responseBody);
+        String country=jsonPath.getJsonObject("networks[3].location.country");
+        System.out.println("country: "+country);
+        float latitude=jsonPath.getJsonObject("networks[3].location.latitude");
+        System.out.println("latitude: "+latitude);
+        float longitude=jsonPath.getJsonObject("networks[3].location.latitude");
+        System.out.println("longitude: "+longitude);
     }
 
 }

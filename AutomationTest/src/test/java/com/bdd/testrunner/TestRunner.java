@@ -23,7 +23,9 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		, plugin = { "pretty", "json:target/cucumber.json", "junit:target/cucumber.xml", "pretty:target/cucumber-pretty.txt" },
 		tags={"@Test"}
 		, glue = {
-						"com.bdd.stepdefinition"}, dryRun = false, monochrome = true
+						"com.bdd.stepdefinition",
+						"com.bdd.hooks"},
+		dryRun = false, monochrome = true
 
 )
 public class TestRunner {
