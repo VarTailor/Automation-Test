@@ -36,6 +36,14 @@ public class BaseClass{
 
         driver = getDriver();
     }
-
+    public static String getProperty() {
+    	return prop.getProperty("network");
+    }
+    
+	
+    
+    
+    
+    
 
 }
