@@ -27,6 +27,12 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 )
 public class TestRunner {
+	
+	static {
+        // Example: Set browser and URL properties
+        System.setProperty("browser.name", "chrome");
+        System.setProperty("url", "QA");
+    }
 
 	private TestNGCucumberRunner testNGCucumberRunner;
 
