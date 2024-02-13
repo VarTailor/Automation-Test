@@ -1,3 +1,7 @@
 # Automation-Test
-I have kept data base code example inside API class just for reference code
-Run command : maven clean install -Dbrowser.name=chrome -Durl=QA
+
+Run command : mvn clean install -Dbrowser.name=chrome -Durl=QA
+Require git to install
+  -Install git to clone, create new branch from main, commit changes and push your code
+**NOTE: Do not merge your code into main branch**
+
