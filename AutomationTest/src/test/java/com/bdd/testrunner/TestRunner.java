@@ -3,8 +3,8 @@ package com.bdd.testrunner;
 
 
 /*
- * This class is used to run all the feature files
- * Created By : Varsha  Tailor
+ * This class is used to run all the feature files 
+ * Created By : Nagaraj Joghee
  */
 
 import org.testng.annotations.AfterClass;
@@ -23,21 +23,16 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		, plugin = { "pretty", "json:target/cucumber.json", "junit:target/cucumber.xml", "pretty:target/cucumber-pretty.txt" },
 		tags={"@Test"}
 		, glue = {
-						"com.bdd.stepdefinition"}, dryRun = false, monochrome = true
+						"com.bdd.stepdefinition",
+						"com.bdd.hooks" }, dryRun = false, monochrome = true
 
 )
 public class TestRunner {
-	
-	static {
-        // Example: Set browser and URL properties
-        System.setProperty("browser.name", "chrome");
-        System.setProperty("url", "QA");
-    }
 
 	private TestNGCucumberRunner testNGCucumberRunner;
 
 	@BeforeClass(alwaysRun = true)
-	public void setUpClass() {
+	public void setUpClass() throws Exception {
 
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 
@@ -58,7 +53,7 @@ public class TestRunner {
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void tearDownClass() {
+	public void tearDownClass() throws Exception {
 
 		testNGCucumberRunner.finish();
 

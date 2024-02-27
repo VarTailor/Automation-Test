@@ -27,7 +27,7 @@ public class SeleniumFactory {
             }
         }return driver;
     }
-    private static void setDriver(String browser){
+    private static void setDriver(String browser)throws Exception{
         switch (browser){
             case("chrome"):{
                 setupChrome();
