@@ -13,7 +13,7 @@ public class ProductDetailsPage extends BaseClass {
     @FindBy (xpath= "//a[@class='c-product-card']") WebElement prod;
     @FindBy (xpath = "//button[text()='Size guide']") WebElement guide;
     @FindBy (xpath = "//div[contains(@aria-label,'Quantity')]") WebElement qty;
-    @FindBy (xpath = "//ul[contains(@aria-label,'Quantity')]/li[2]") WebElement qty2;
+    @FindBy (xpath = "//ul[contains(@aria-label,'Quantity')]/li[1]") WebElement qty2;
     @FindBy (xpath = "//h1[@class='o-default-banner-section']") WebElement hdrGuide;
     @FindBy (xpath = "//button[contains(text(),'Add to bag')]") WebElement cart;
     @FindBy (xpath = "//a[contains(text(),'View bag')]") WebElement viewCart;

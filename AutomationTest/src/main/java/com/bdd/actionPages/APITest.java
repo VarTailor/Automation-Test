@@ -30,7 +30,7 @@ public class APITest{
             ResponseBody body = rsp.getBody();
             System.out.println(body.asString());
             JsonPath jsp = rsp.jsonPath();
-            String str = jsp.get("$.networks[?(@.location['country']=='RU')].location");
+            String str = jsp.getString("networks.find {it.location['country'] == 'RU'}.location");
             System.out.println(str);
         }
         catch(Exception e){
