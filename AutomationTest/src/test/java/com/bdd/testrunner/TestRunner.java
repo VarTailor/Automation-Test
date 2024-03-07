@@ -29,14 +29,12 @@ public class TestRunner {
 	public void setUpClass() throws Exception {
 
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-
 	}
 
 	@Test(dataProvider = "scenarios")
 	public void scenarios(PickleEventWrapper eventwrapper, CucumberFeatureWrapper CucumberFeature) throws Throwable {
 
 		testNGCucumberRunner.runScenario(eventwrapper.getPickleEvent());
-
 	}
 
 
