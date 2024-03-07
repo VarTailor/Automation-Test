@@ -12,14 +12,16 @@ import java.util.concurrent.TimeUnit;
 public class SeleniumFactory {
     private static WebDriver driver;
     public static Properties prop;
+
     public static WebDriver getDriver(){
         if(driver==null){
             try{
-
-                setDriver(System.getProperty("browser.name"));
+                setDriver(System.getProperty("browser"));
+                //setDriver("chrome");
                 driver.manage().window().maximize();
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 setURL(System.getProperty("url"));
+                //driver.get("https://www.tkmaxx.com/uk/en/");
 
             }catch (Exception e){
                 System.out.println("Browser creates exception " + e);
@@ -41,6 +43,7 @@ public class SeleniumFactory {
         }
     }
     private static void setupChrome(){
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ravi\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
     }

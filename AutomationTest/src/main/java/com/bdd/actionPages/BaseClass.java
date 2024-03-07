@@ -15,7 +15,6 @@ public class BaseClass{
     public static WebDriver driver;
     public static Properties prop;
 
-
     public BaseClass(){
 
         final String configFileName = "config.properties";
@@ -33,9 +32,6 @@ public class BaseClass{
 
             e.getMessage();
         }
-
         driver = getDriver();
     }
-
-
 }

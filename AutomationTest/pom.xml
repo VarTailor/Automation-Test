@@ -25,7 +25,6 @@
 
                     <suiteXmlFiles>
                         <suiteXmlFile>${project.basedir}//mainsuit.xml</suiteXmlFile>
-
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
@@ -47,6 +46,16 @@
 
 
     <dependencies>
+		<dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ccil.cowan.tagsoup</groupId>
+            <artifactId>tagsoup</artifactId>
+            <version>1.2</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
@@ -260,7 +269,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.5.0</version>
+            <version>5.7.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium.grid/selenium-grid-remote-control -->
         <dependency>
@@ -286,8 +295,6 @@
             <artifactId>selenium-server</artifactId>
             <version>3.141.59</version>
         </dependency>
-
-
     </dependencies>
 
 
