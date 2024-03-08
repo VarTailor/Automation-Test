@@ -22,6 +22,7 @@ public class HomePage extends BaseClass {
         String getheadertext = header.getText().trim();
         assertEquals("TK Maxx UK", getheadertext);
         System.out.println("Header validated: "+ getheadertext);
+        Thread.sleep(20000);
         if(cookie.isDisplayed()) {
             Thread.sleep(2000);
             cookie.click();

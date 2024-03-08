@@ -6,12 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumFactory {
     private static WebDriver driver;
-    public static Properties prop;
 
     public static WebDriver getDriver(){
         if(driver==null){
@@ -29,7 +27,7 @@ public class SeleniumFactory {
             }
         }return driver;
     }
-    private static void setDriver(String browser)throws Exception{
+    private static void setDriver(String browser){
         switch (browser){
             case("chrome"):{
                 setupChrome();
@@ -39,11 +37,13 @@ public class SeleniumFactory {
                 setupFireFox();
                 break;
             }
+            default:{
+                setupChrome();
+            }
 
         }
     }
     private static void setupChrome(){
-        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ravi\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
     }

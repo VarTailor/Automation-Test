@@ -9,13 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 public class ProductCatalogPage extends BaseClass{
     WebDriver driver;
 
-//    @FindBy(xpath = "//div[@class='product-details']/p") WebElement productName;
-//    @FindBy(xpath = "//div[@class='product-details']/h1") WebElement productDescription;
-//    @FindBy(className = "item-price-original") WebElement productPrice;
-//    @FindBy(xpath = "//div[@class='product-rrp']/p") WebElement productRrp;
-//    @FindBy(xpath = "//div[@class='product-save-price u-font-bold u-colour-mu']/p") WebElement productDiscount;
-    @FindBy(xpath = "//ul[@class='nav nav-pills main-navigation-list']/li/a[@title='Women']") WebElement women;
-    @FindBy(xpath = "//li[@data-categoryid='WomenClothingMMNode']") WebElement clothing;
+    @FindBy (xpath = "//ul[@class='nav nav-pills main-navigation-list']/li/a[@title='Women']") WebElement women;
+    @FindBy (xpath = "//li[@data-categoryid='WomenClothingMMNode']") WebElement clothing;
     @FindBy (xpath = "//a[text()='Dresses']") WebElement dressesLink;
     @FindBy (xpath= "//button[@title='Brand']") WebElement btnBrand;
     @FindBy (xpath= "//button[@value='brand:adrianna_papell']") WebElement opt1;
@@ -31,7 +26,7 @@ public class ProductCatalogPage extends BaseClass{
         action.moveToElement(women).perform();
         action.moveToElement(clothing).perform();
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         System.out.println("Option displayed & Clicked: "+ dressesLink.getText());
         dressesLink.click();
     }

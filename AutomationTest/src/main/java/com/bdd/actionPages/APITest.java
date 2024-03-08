@@ -1,23 +1,17 @@
 package com.bdd.actionPages;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import org.json.simple.parser.ParseException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.path.json.JsonPath;
 
-import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
 public class APITest{
 
-    @Test
-    public  void Test_API() throws IOException, ParseException {
+    @Test(description = "API Test")
+    public  void Test_API() {
         try{
             Response rsp = given().
                     when().
@@ -27,6 +21,7 @@ public class APITest{
                     extract().
                     response();
             System.out.println(rsp.getStatusCode());
+            //Add assertions
             ResponseBody body = rsp.getBody();
             System.out.println(body.asString());
             JsonPath jsp = rsp.jsonPath();
@@ -35,6 +30,7 @@ public class APITest{
         }
         catch(Exception e){
             System.out.println(e + "Test Case failed in API test");
+            //Logger
             e.printStackTrace();
         }
     }

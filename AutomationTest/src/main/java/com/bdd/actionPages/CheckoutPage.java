@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CheckoutPage extends BaseClass{
-    //public static WebDriver driver;
     WebDriver driver;
 
     @FindBy (xpath = "//a/span[text()='Checkout as guest']") WebElement checkoutLink;

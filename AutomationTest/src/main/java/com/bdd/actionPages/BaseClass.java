@@ -14,10 +14,9 @@ import static com.bdd.browser.SeleniumFactory.getDriver;
 public class BaseClass{
     public static WebDriver driver;
     public static Properties prop;
+    private static final String configFileName = "config.properties";
 
     public BaseClass(){
-
-        final String configFileName = "config.properties";
 
         try {
             prop = new Properties();
@@ -31,6 +30,7 @@ public class BaseClass{
         } catch (IOException e) {
 
             e.getMessage();
+            //Add a logger
         }
         driver = getDriver();
     }
